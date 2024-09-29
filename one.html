@@ -1,0 +1,388 @@
+<style>
+  /* Container  */
+  .custom-bordered-box-container {
+    max-width: 1260px;
+    width: 96%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 100px;
+    position: relative;
+  }
+
+  /* Container Box  */
+  .custom-bordered-box {
+    padding: 0px 60px 40px 0;
+
+    h1 {
+      font-family: "Inter";
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+    }
+
+    p {
+      font-family: "Open Sans";
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 23px;
+    }
+
+    /* Border Styling  */
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      border-bottom: 1px solid #888888;
+      border-top: 1px solid #888888;
+    }
+
+    &:nth-child(4) {
+      border-right: 1px solid #888888;
+      border-top-right-radius: 12px;
+      border-bottom-right-radius: 12px;
+    }
+
+    /* Before  */
+    &::before {
+      content: "1";
+      width: 50px;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 26px;
+      color: #ffffff;
+      background: #8330ff;
+      position: relative;
+      top: -24px;
+      left: 0;
+      font-family: "Inter";
+    }
+
+    /* Grid Styling      */
+    &:nth-child(5) {
+      grid-column: 4;
+      grid-row: 2;
+    }
+
+    &:nth-child(6) {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+    &:nth-child(7) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    &:nth-child(8) {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    /* Before Styling */
+    &:nth-child(2)::before {
+      content: "2";
+    }
+
+    &:nth-child(3)::before {
+      content: "3";
+    }
+
+    &:nth-child(4)::before {
+      content: "4";
+    }
+
+    &:nth-child(5)::before {
+      content: "5";
+    }
+
+    &:nth-child(6)::before {
+      content: "6";
+    }
+
+    &:nth-child(7)::before {
+      content: "7";
+    }
+
+    &:nth-child(8)::before {
+      content: "8";
+    }
+  }
+
+  /* media Query At 1060px  */
+  @media (max-width: 1060px) {
+    .custom-bordered-box-container {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .custom-bordered-box {
+      padding: 0 50px 40px 28px;
+
+      &:nth-child(3) {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        grid-area: 1/3;
+      }
+
+      /* Grid Styling  */
+      &:nth-child(4) {
+        grid-area: 2/3;
+        border: none;
+      }
+
+      &:nth-child(5) {
+        grid-area: 2/2;
+      }
+
+      &:nth-child(6) {
+        grid-area: 2/1;
+        border-left: 1px solid #888888;
+      }
+
+      &:nth-child(7) {
+        grid-area: 3/1;
+      }
+
+      &:nth-child(8) {
+        grid-area: 3/2;
+      }
+
+      /* Border Styling */
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        border-top: 1px solid #888888;
+        border-bottom: 1px solid #888888;
+      }
+
+      &:nth-child(3) {
+        border-right: 1px solid #888888;
+      }
+
+      &:nth-child(7),
+      &:nth-child(8) {
+        border-top: 1px solid #888888;
+      }
+
+      /* Before Styling  */
+      &::before {
+        left: -45px;
+      }
+    }
+  }
+
+  @media (max-width: 870px) {
+    .custom-bordered-box-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .custom-bordered-box {
+      padding-right: 40px;
+
+      h1 {
+        font-size: 22px;
+        line-height: 26px;
+      }
+
+      p {
+        margin-top: 18px;
+      }
+
+      /* Grid Styling  */
+      &:nth-child(3) {
+        grid-area: 2/2;
+        /* background: red; */
+        border: none;
+      }
+
+      &:nth-child(4) {
+        grid-area: 2/1;
+        border-left: 1px solid #888888;
+        border-bottom: 1px solid #888888;
+      }
+
+      &:nth-child(5) {
+        grid-area: 3/1;
+      }
+
+      &:nth-child(6) {
+        grid-area: 3/2;
+        border: 1px solid #888888;
+        border-left: none;
+      }
+
+      &:nth-child(7) {
+        grid-area: 4/2;
+        border: none;
+      }
+
+      &:nth-child(8) {
+        grid-area: 4/1;
+      }
+
+      &:nth-child(2) {
+        border-right: 1px solid #888888;
+      }
+
+      &:nth-child(2),
+      &:nth-child(6) {
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+
+      /* Before Styling  */
+      &::before {
+        left: -45px;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    .custom-bordered-box-container {
+      grid-template-columns: 1fr;
+    }
+
+    .custom-bordered-box {
+      margin: 0 30px;
+      padding-right: 20px;
+      padding-left: 28px;
+
+      h1 {
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      p {
+        margin-top: 12px;
+      }
+
+      /* Grid Styling  */
+      &:nth-child(1) {
+        grid-area: 1/1;
+      }
+
+      &:nth-child(2) {
+        grid-area: 2/1;
+      }
+
+      &:nth-child(3) {
+        grid-area: 3/1;
+      }
+
+      &:nth-child(4) {
+        grid-area: 4/1;
+      }
+
+      &:nth-child(5) {
+        grid-area: 5/1;
+      }
+
+      &:nth-child(6) {
+        grid-area: 6/1;
+      }
+
+      &:nth-child(7) {
+        grid-area: 7/1;
+      }
+
+      &:nth-child(8) {
+        grid-area: 8/1;
+      }
+
+      /* Border Styling  */
+      &:nth-child(1),
+      &:nth-child(3),
+      &:nth-child(5),
+      &:nth-child(7) {
+        border: 1px solid #888888;
+        border-left: none;
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+      }
+
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(6) {
+        border: none;
+        border-left: 1px solid #888888;
+      }
+    }
+  }
+</style>
+
+<div class="custom-bordered-box-container">
+  <!-- Box No 1  -->
+  <div class="custom-bordered-box">
+    <h1>Discussing your idea</h1>
+    <p
+      >Tell us about your vision, problems to solve, and expectations. We’re all
+      ears!</p
+    >
+  </div>
+
+  <!-- Box No 2  -->
+  <div class="custom-bordered-box">
+    <h1>Defining the goal</h1>
+    <p
+      >Refine your product's purpose to boost its chances of thriving on the
+      market.</p
+    >
+  </div>
+
+  <!-- Box No 3  -->
+  <div class="custom-bordered-box">
+    <h1>Setting the strategy</h1>
+    <p
+      >What will make your product a standout success that’s loved by users? Set
+      the strategy, then get a plan with the timeline, budget, and more.</p
+    >
+  </div>
+
+  <!-- Box No 4  -->
+  <div class="custom-bordered-box">
+    <h1>Researching market needs</h1>
+    <p
+      >UX researchers do a deep dive into what users actually want. We use these
+      insights to fine-tune the strategy.</p
+    >
+  </div>
+
+  <!-- Box No 5  -->
+  <div class="custom-bordered-box">
+    <h1>Creating your product</h1>
+    <p
+      >It's go time for designing, coding and testing – bringing your idea to
+      life!</p
+    >
+  </div>
+
+  <!-- Box No 6  -->
+  <div class="custom-bordered-box">
+    <h1>Launching</h1>
+    <p
+      >Time to let your product fly, introducing it to the market, and scooping
+      up feedback.</p
+    >
+  </div>
+
+  <!-- Box No 7  -->
+  <div class="custom-bordered-box">
+    <h1>Further development</h1>
+    <p
+      >Keep the ball rolling with fresh updates and new versions – all driven by
+      market data.</p
+    >
+  </div>
+
+  <!-- Box No 8  -->
+  <div class="custom-bordered-box">
+    <h1>Handover to your team</h1>
+    <p
+      >Thinking about bringing the magic in-house? We'll help you build your
+      team and smoothly pass the baton.</p
+    >
+  </div>
+</div>
